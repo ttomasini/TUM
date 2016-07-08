@@ -37,10 +37,16 @@ public:
 private:
 	can::ICANTransceiver& fCanTransceiver;
 	can::IntervalFilter	fCanFilter;
-
+	
+	virtual bool checkValid(sint32 value);
+	
 	IGpsACPusher& fAcPusher;
 	sint32 fLastLatInMs;
 	sint32 fLastLongInMs;
+	sint32 longitude;
+	sint32 latitude;
+	
+
 };
 
 } // namespace gps
